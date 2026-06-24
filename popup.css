@@ -1,0 +1,352 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 340px;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #FAF6F1;
+  color: #3D2B1F;
+  padding: 16px;
+  line-height: 1.45;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.logo {
+  border-radius: 8px;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #3D2B1F;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #6B5D4F;
+  margin-top: 1px;
+  letter-spacing: 0.02em;
+}
+
+.tabs {
+  display: flex;
+  border: 1px solid #E8DDD0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: #F5EDE3;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  background: #F5EDE3;
+  color: #6B5D4F;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.tab + .tab {
+  border-left: 1px solid #E8DDD0;
+}
+
+.tab:hover:not(.active) {
+  background: #E8DDD0;
+}
+
+.tab.active {
+  background: #C0754A;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.panel {
+  margin-bottom: 12px;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6B5D4F;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.label:not(:first-child) {
+  margin-top: 10px;
+}
+
+.select,
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  border: 1px solid #E8DDD0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #3D2B1F;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.select {
+  margin-bottom: 0;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%236B5D4F' d='M0 0l5 6 5-6z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+
+.select:focus,
+.input:focus {
+  border-color: #C0754A;
+  box-shadow: 0 0 0 3px rgba(192, 117, 74, 0.15);
+}
+
+.input {
+  margin-bottom: 0;
+}
+
+.y-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 6px 0;
+}
+
+.y-toggle-label {
+  font-size: 12px;
+  color: #6B5D4F;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin: 0;
+}
+
+.y-toggle {
+  width: 16px;
+  height: 16px;
+  accent-color: #C0754A;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #C0754A;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.btn:hover:not(:disabled) {
+  background: #8B5A2B;
+}
+
+.btn:disabled {
+  background: #D5C4B1;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.results {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #E8DDD0;
+}
+
+.results-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6B5D4F;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-card {
+  background: #F5EDE3;
+  border: 1px solid #E8DDD0;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.result-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.result-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6B5D4F;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex: 1;
+}
+
+.result-number {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #C0754A;
+}
+
+.result-number.master {
+  background: linear-gradient(135deg, #A68B5B 0%, #C0754A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.result-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3D2B1F;
+  margin-bottom: 2px;
+}
+
+.result-desc {
+  font-size: 12px;
+  color: #6B5D4F;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.result-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #C0754A;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.result-link:hover {
+  color: #8B5A2B;
+  text-decoration: underline;
+}
+
+.recent {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #E8DDD0;
+}
+
+.recent-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6B5D4F;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.recent-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recent-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  background: #F5EDE3;
+  border: 1px solid #E8DDD0;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  color: #3D2B1F;
+  transition: background 0.15s;
+}
+
+.recent-btn:hover {
+  background: #E8DDD0;
+}
+
+.recent-label {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 75%;
+}
+
+.recent-value {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #C0754A;
+  flex-shrink: 0;
+}
+
+.footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #E8DDD0;
+  text-align: center;
+}
+
+.footer-link {
+  font-size: 11px;
+  color: #6B5D4F;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.footer-link strong {
+  color: #C0754A;
+  font-weight: 600;
+}
+
+.footer-link:hover strong {
+  color: #8B5A2B;
+}

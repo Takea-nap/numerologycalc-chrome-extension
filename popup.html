@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>NumerologyCalc</title>
+</head>
+<body>
+  <header class="header">
+    <img src="icons/icon32.png" alt="" class="logo" width="32" height="32">
+    <div>
+      <h1 class="title">NumerologyCalc</h1>
+      <p class="subtitle">Quick Number Calculator</p>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" role="tab" aria-selected="true" data-tab="lifepath" id="tab-lifepath" aria-controls="panel-lifepath">Life Path</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="name" id="tab-name" aria-controls="panel-name">Name Numbers</button>
+  </div>
+
+  <main id="panel-lifepath" class="panel active" role="tabpanel" aria-labelledby="tab-lifepath">
+    <label for="month-select" class="label">Month</label>
+    <select id="month-select" class="select" aria-label="Month">
+      <option value="">Month...</option>
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+
+    <label for="day-select" class="label">Day</label>
+    <select id="day-select" class="select" aria-label="Day">
+      <option value="">Day...</option>
+    </select>
+
+    <label for="year-select" class="label">Year</label>
+    <select id="year-select" class="select" aria-label="Year">
+      <option value="">Year...</option>
+    </select>
+
+    <button id="calc-lifepath-btn" class="btn" disabled>Calculate Life Path</button>
+  </main>
+
+  <main id="panel-name" class="panel" role="tabpanel" aria-labelledby="tab-name" hidden>
+    <label for="name-input" class="label">Full Birth Name</label>
+    <input id="name-input" class="input" type="text" placeholder="e.g. John Michael Smith" autocomplete="off" aria-label="Full birth name">
+
+    <div class="y-toggle-row">
+      <label class="y-toggle-label" for="y-vowel-toggle">Treat Y as vowel</label>
+      <input type="checkbox" id="y-vowel-toggle" class="y-toggle">
+    </div>
+
+    <button id="calc-name-btn" class="btn" disabled>Calculate Name Numbers</button>
+  </main>
+
+  <section id="results" class="results" hidden>
+    <h2 class="results-title">Your Numbers</h2>
+    <div id="results-list" class="results-list"></div>
+  </section>
+
+  <section id="recent" class="recent" hidden>
+    <h2 class="recent-title">Recent</h2>
+    <ul id="recent-list" class="recent-list"></ul>
+  </section>
+
+  <footer class="footer">
+    <a href="https://numerologycalc.org/?utm_source=chrome-extension&utm_medium=extension&utm_campaign=footer" target="_blank" rel="noopener" class="footer-link">
+      Powered by <strong>numerologycalc.org</strong>
+    </a>
+  </footer>
+
+  <script src="lib/numerology.js"></script>
+  <script src="lib/meanings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
