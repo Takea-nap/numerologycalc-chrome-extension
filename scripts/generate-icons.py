@@ -1,11 +1,8 @@
 """
 Generate Chrome extension icons from the main site's brand mark.
 
-Source of truth:
-  numerologycalc/public/logo-mark.svg
-
-This keeps the extension icon aligned with the actual NumerologyCalc branding
-instead of maintaining a separate hand-drawn fallback icon.
+Generates icons from the main site's logo-mark.svg.
+Requires the SVG path to be set in SOURCE_SVG below.
 """
 
 import os
@@ -17,7 +14,10 @@ from PIL import Image
 SIZES = [16, 32, 48, 128]
 ROOT_DIR = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
 OUT_DIR = os.path.join(ROOT_DIR, "icons")
-SOURCE_SVG = "numerologycalc/public/logo-mark.svg"
+SOURCE_SVG = os.environ.get(
+    "LOGO_SVG_PATH",
+    os.path.join(ROOT_DIR, "..", "numerologycalc", "public", "logo-mark.svg"),
+)
 
 
 def render_source_png():
